@@ -1,0 +1,35 @@
+.container
+  - if user_signed_in?
+    = link_to('Logout', destroy_user_session_path, method: :delete,class: 'btn btn-default')
+    = link_to('Projects',projects_url(subdomain: current_user.subdomain ), class: 'btn btn-info')
+  - else
+    = link_to('Login', new_user_session_path) 
+.container
+  %h1
+    Hello 
+    = current_user.full_name
+  %strong
+    Please add project by click on the Projects button above to understand Per User Based Schema.
+  %hr
+    
+  %h2 You are looking into Multi-tenancy Rails-App
+  
+  %h3 Let's learn something about Multi-tenancy in Rails.
+  %p 
+    Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant. Tenants may be given the ability to customize some parts of the application, such as the color of the user interface (UI) or business rules, but they cannot customize the application's code.
+  %p
+    In a multi-tenant architecture, multiple instances of an application operate in a shared environment. This architecture is able to work because each tenant is integrated physically, but logically separated; meaning that a single instance of the software will run on one server and then serve multiple tenants. In this way, a software application in a multi-tenant architecture can share a dedicated instance of configurations, data, user management and other properties
+
+  %h2
+    Importance of multi-tenancy
+  %p 
+    Multi-tenancy has seen a lot of could adoption and is used most with cloud computing. Multi-tenant architectures are found in both public cloud and private cloud environments, allowing each tenant's data to be separated from each other. For example, in a multi-tenant public cloud, the same servers will be used in a hosted environment to host multiple users. Each user is given a separate and ideally secure space within those servers to store data.
+
+  %p
+    Multi-tenancy is also important for the scalability of public and private clouds, and has helped make multi-tenancy a standard. The multi-tenant architecture can also aid in providing a better ROI for organizations, as well as quickening the pace of maintenance and updates for tenants.  
+  %h3
+    Thanks, 
+    %small
+      Made with 
+      %i.fa.fa-heart
+        by Ayush
