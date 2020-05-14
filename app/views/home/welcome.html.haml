@@ -4,6 +4,8 @@
     = link_to('Projects',projects_url(subdomain: current_user.subdomain ), class: 'btn btn-info')
   - else
     = link_to('Login', new_user_session_path) 
+  .pull-right  
+    = link_to 'New Field', config_index_url(subdomain: current_user.subdomain ) ,class: 'btn btn-success'
 .container
   %h1
     Hello 

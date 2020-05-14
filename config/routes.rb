@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   root 'home#welcome'
   constraints Subdomain do
     resources :projects
+    resources :config, only:[:new, :index, :create]
   end
 end

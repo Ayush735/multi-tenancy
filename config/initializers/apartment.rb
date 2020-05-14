@@ -77,7 +77,7 @@ Apartment.configure do |config|
   # config.persistent_schemas = %w{ hstore }
 
   # <== PostgreSQL only options
-  #
+  # config.persistent_schemas = ['shared_extensions']
 
   # By default, and only when not using PostgreSQL schemas, Apartment will prepend the environment
   # to the tenant name to ensure there is no conflict between your environments.

@@ -1,0 +1,31 @@
+.container
+  = form_tag('/config') do
+    .form-group
+      = select_tag "table", options_for_select(@tables), prompt: 'Please select table' , class: 'form-control' 
+    = text_field_tag "property", nil,placeholder: "property name" , class: 'form-control' 
+    = select_tag "data_type", options_for_select(@data_types), prompt: 'Please select datatype' , class: 'form-control' 
+    = submit_tag 'migrate' , class: 'btn btn-primary' 
+.conainer
+  %p
+    %strong
+      Available properties in project table from tenant: 
+      = current_user.try(:subdomain)
+  .col-md-12
+    -if @fields.present?
+      %table.table-bordered
+        -i = 1
+        %tr
+          %td #
+          %td Propery
+          %td DataType
+        -@fields.each do |key, type|
+          %tr
+            %td
+              = i
+            %td
+              %strong
+                = key
+            %td
+              %strong
+                = type
+          - i+=1      
